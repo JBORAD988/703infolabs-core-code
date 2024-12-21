@@ -3,22 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { MaterialModule } from 'src/app/modules/material/material.module';
-import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ServicesComponent } from './services/services.component';
-import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 
 
 @NgModule({
   declarations: [
-
-  AboutComponent,
-  HomeComponent,
-  ServicesComponent,
-  ContactComponent
+    HomeComponent,
+    AboutComponent,
+    ServicesComponent
 
 
   ],
@@ -28,6 +24,8 @@ import { ContactComponent } from './contact/contact.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-  ]
+  ],
+  exports: [
+    HomeComponent ]
 })
 export class PagesModule { }
