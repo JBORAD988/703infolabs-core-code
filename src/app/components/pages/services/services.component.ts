@@ -130,6 +130,153 @@ import { Component } from '@angular/core';
       }
     }
 
+
+    .service-card {
+  @include glass-effect;
+  padding: 2rem;
+  border-radius: 1rem;
+  color: $text-light;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0, 150, 255, 0.4),
+                0 0 20px rgba(0, 150, 255, 0.4);
+
+    &::before {
+      // Shine effect
+      left: 100%;
+    }
+
+    .service-icon {
+      transform: scale(1.1);
+      text-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
+    }
+
+    .service-title {
+      color: rgba(0, 150, 255, 0.9);
+      text-shadow: 0 0 15px rgba(0, 150, 255, 0.3);
+    }
+
+    .technologies span {
+      border-color: $accent-blue;
+      box-shadow: 0 0 15px rgba(0, 150, 255, 0.3);
+    }
+  }
+
+  &::before {
+    // Shine effect
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    border-radius: inherit;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 150, 255, 0.1) 0%,
+      transparent 70%
+    );
+  }
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  @include gradient-text;
+  transition: all 0.3s ease;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $accent-blue;
+  transition: all 0.3s ease;
+}
+
+.service-features {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+      position: relative;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateX(5px);
+      }
+
+      &:before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: $accent-blue;
+      }
+    }
+  }
+}
+
+.technologies {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  span {
+    background: rgba(0, 150, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    border: 1px solid rgba(0, 150, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+      background: rgba(0, 150, 255, 0.2);
+      box-shadow: 0 5px 15px rgba(0, 150, 255, 0.3);
+    }
+  }
+}
+
+// Enhanced title and subtitle hover effects
+.title, .subtitle {
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-shadow: 0 0 20px rgba(0, 150, 255, 0.4);
+  }
+}
+
     @media (max-width: 480px) {
       .services-container {
         padding: 3rem 3%;

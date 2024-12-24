@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { ServicesComponent } from './services/services.component';
 import { AboutComponent } from './about/about.component';
+import { HerosectionComponent } from './herosection/herosection.component';
 
 
 
@@ -14,7 +15,8 @@ import { AboutComponent } from './about/about.component';
   declarations: [
     HomeComponent,
     AboutComponent,
-    ServicesComponent
+    ServicesComponent,
+    HerosectionComponent
 
 
   ],
