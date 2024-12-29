@@ -4,6 +4,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-herosection',
   template: `
+  <div class="code-animation">
+  <pre *ngFor="let block of codeBlocks" [style.animation-delay]="block.delay">
+    <code>{{block.code}}</code>
+  </pre>
+</div>
     <section class="hero-container">
       <div class="content-wrapper">
         <div class="text-content">
@@ -55,6 +60,7 @@ import { Component, OnInit } from '@angular/core';
       align-items: center;
       padding: 1% 5% 6rem 5%;
       overflow: hidden;
+      isolation: isolate;
 
 
       @media (max-width: 768px) {
@@ -67,13 +73,14 @@ import { Component, OnInit } from '@angular/core';
     }
 
     .content-wrapper {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-    }
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  isolation: isolate;
+}
 
     .text-content {
       max-width: 800px;
@@ -194,6 +201,60 @@ import { Component, OnInit } from '@angular/core';
       }
     }
 
+
+
+
+
+//animation
+.code-animation {
+  position: fixed; // Changed from absolute to fixed
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.code-animation pre {
+  position: absolute;
+  font-family: 'Fira Code', monospace;
+  color: $accent-blue;
+  font-size: 14px;
+  white-space: pre;
+  opacity: 0;
+  transform: translateX(-50%);
+  animation: codeSlide 15s linear infinite;
+  pointer-events: none;
+
+  &:nth-child(odd) {
+    top: 20%;
+  }
+
+  &:nth-child(even) {
+    bottom: 20%;
+  }
+}
+
+@keyframes codeSlide {
+  0% {
+    transform: translateX(400%) translateY(-50%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(100%) translateY(50%);
+    opacity: 0;
+  }
+}
+
+
     // Stats Section
     .stats-container {
       display: grid;
@@ -243,6 +304,7 @@ import { Component, OnInit } from '@angular/core';
       width: 100%;
       height: 100%;
       z-index: 1;
+      pointer-events: none;
     }
 
     .blur-circle-1 {
@@ -355,6 +417,119 @@ export class HerosectionComponent implements OnInit {
     { value: '100+', label: 'Projects Delivered' },
     { value: '50+', label: 'Happy Clients' },
     { value: '24/7', label: 'Support' }
+  ];
+
+  readonly codeBlocks = [
+    {
+      code: `function calculatePrimeNumbers(limit) {
+    const primes = [];
+    for (let i = 2; i <= limit; i++) {
+      let isPrime = true;
+      for (let j = 2; j < i; j++) {
+        if (i % j === 0) {
+          isPrime = false;
+          break;
+        }
+      }
+      if (isPrime) primes.push(i);
+    }
+    return primes;
+  }`,
+      delay: '0s',
+    },
+    {
+      code: `const apiConfig = {
+    baseURL: 'https://api.example.com',
+    endpoints: {
+      users: '/v1/users',
+      posts: '/v1/posts',
+      comments: '/v1/comments',
+    },
+    fetchWithAuth: async function (endpoint, token) {
+      const response = await fetch(this.baseURL + endpoint, {
+        headers: {
+          Authorization: \`Bearer \${token}\`,
+        },
+      });
+      return response.json();
+    },
+  };`,
+      delay: '5s',
+    },
+    {
+      code: `class AIModel {
+    constructor(name, parameters) {
+      this.name = name;
+      this.parameters = parameters;
+    }
+
+    async train(dataSet) {
+      console.log(\`Training \${this.name} model with \${dataSet.length} samples...\`);
+      // Simulating a training delay
+      return new Promise((resolve) => setTimeout(resolve, 2000));
+    }
+
+    predict(input) {
+      console.log(\`Predicting output for input: \${JSON.stringify(input)}\`);
+      return input.map(value => value * Math.random());
+    }
+  }`,
+      delay: '10s',
+    },
+    {
+      code: `void main() {
+    runApp(MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter Demo'),
+        ),
+        body: Center(
+          child: Text('Hello, Flutter!'),
+        ),
+      ),
+    ));
+  }`,
+      delay: '15s',
+    },
+    {
+      code: `const express = require('express');
+  const app = express();
+  app.use(express.json());
+
+  app.get('/api/status', (req, res) => {
+    res.json({ status: 'Server is running' });
+  });
+
+  app.post('/api/data', (req, res) => {
+    const data = req.body;
+    console.log('Received data:', data);
+    res.status(201).json({ message: 'Data saved', data });
+  });
+
+  app.listen(3000, () => console.log('Server is listening on port 3000'));`,
+      delay: '20s',
+    },
+    {
+      code: `public class ProductService {
+    private readonly List<Product> _products;
+
+    public ProductService() {
+      _products = new List<Product> {
+        new Product { Id = 1, Name = "Laptop", Price = 999.99M },
+        new Product { Id = 2, Name = "Smartphone", Price = 799.99M }
+      };
+    }
+
+    public IEnumerable<Product> GetAllProducts() {
+      return _products;
+    }
+
+    public Product GetProductById(int id) {
+      return _products.FirstOrDefault(p => p.Id == id);
+    }
+  }`,
+      delay: '25s',
+    },
   ];
 
   ngOnInit() {
