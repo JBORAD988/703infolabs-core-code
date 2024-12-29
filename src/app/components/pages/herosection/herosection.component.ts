@@ -28,12 +28,12 @@ import { Component, OnInit } from '@angular/core';
           </div>
         </div>
 
-        <div class="stats-container">
+        <!-- <div class="stats-container">
           <div class="stat-item glow-effect" *ngFor="let stat of stats">
             <h3>{{stat.value}}</h3>
             <p>{{stat.label}}</p>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <!-- Background Elements -->
@@ -47,14 +47,14 @@ import { Component, OnInit } from '@angular/core';
   styles: [`
     @import 'variables';
 
-    // Container Styles
     .hero-container {
       min-height: 100vh;
       position: relative;
       display: flex;
       align-items: center;
-      padding: 6rem 9%;
+      padding: 1% 15% 6rem 15%;
       overflow: hidden;
+
 
       @media (max-width: 768px) {
         padding: 4rem 5%;
@@ -65,7 +65,6 @@ import { Component, OnInit } from '@angular/core';
       }
     }
 
-    // Content Styles
     .content-wrapper {
       position: relative;
       z-index: 2;
@@ -233,6 +232,7 @@ import { Component, OnInit } from '@angular/core';
         opacity: 0.9;
       }
     }
+
 
     // Background Elements
     .bg-elements {

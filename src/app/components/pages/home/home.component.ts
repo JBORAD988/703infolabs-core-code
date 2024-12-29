@@ -5,6 +5,9 @@ import { Component } from '@angular/core';
   template: `
   <app-herosection></app-herosection>
   <app-about></app-about>
+  <app-development-process></app-development-process>
+  <app-technologies></app-technologies>
+  <app-projects></app-projects>
   <app-services></app-services>
 
   `,

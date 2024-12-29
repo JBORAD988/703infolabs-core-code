@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import { ScrollAnimationService } from 'src/app/services/animationservice.service';
 
 @Component({
   selector: 'app-services',
   template: `
     <section class="services-container">
-      <h1 class="title">Our Services</h1>
-      <p class="subtitle">Building exceptional digital solutions for your needs</p>
+      <h1 class="title animate slide-down">Our Services</h1>
+      <p class="subtitle animate slide-down">Building exceptional digital solutions for your needs</p>
 
       <div class="services-grid">
         <div class="service-card" *ngFor="let service of services">
@@ -205,6 +206,65 @@ import { Component } from '@angular/core';
   }
 }
 
+
+  // Animation Base Class
+  .animate {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animate.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    // Slide Down Animation
+    .slide-down {
+      transform: translateY(-50px);
+
+      &.active {
+        transform: translateY(0);
+      }
+    }
+
+    // Slide Up Animation
+    .slide-up {
+      transform: translateY(50px);
+
+      &.active {
+        transform: translateY(0);
+      }
+    }
+
+    // Slide In Animation
+    .slide-in {
+      transform: translateX(-50px);
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+
+    // Slide Right Animation
+    .slide-right {
+      transform: translateX(-30px);
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+
+    // Fade In Animation
+    .fade-in {
+      opacity: 0;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+
 .service-icon {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
@@ -296,7 +356,22 @@ import { Component } from '@angular/core';
     }
   `]
 })
-export class ServicesComponent {
+export class ServicesComponent implements OnInit , AfterViewInit {
+
+  constructor( private scrollAnimationService : ScrollAnimationService , private elementRef: ElementRef) { }
+
+  ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+this.initializeAnimations();
+  }
+
+  private initializeAnimations() {
+    const animatedElements = this.elementRef.nativeElement.querySelectorAll('.animate');
+    this.scrollAnimationService.observeElements(animatedElements);
+  }
+
   services = [
     {
       icon: '💻',
@@ -371,4 +446,8 @@ export class ServicesComponent {
       technologies: ['D3.js', 'Python', 'Tableau', 'Power BI']
     }
   ];
+
+
+
+
 }

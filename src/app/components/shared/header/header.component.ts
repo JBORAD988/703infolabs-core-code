@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -128,16 +129,17 @@ import { Component } from '@angular/core';
   `]
 })
 export class HeaderComponent {
+  constructor(private router:Router) { }
   navItems = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
-    { name: 'Projects', path: '/projects' },
+    { name: 'Projects', path: '/all-projects' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' }
   ];
 
   handleNavigation(path: string): void {
-    console.log(path);
+    this.router.navigate([path]);
 
   }
 }

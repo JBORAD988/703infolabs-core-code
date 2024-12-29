@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
@@ -8,6 +8,12 @@ import { HomeComponent } from './home/home.component';
 import { ServicesComponent } from './services/services.component';
 import { AboutComponent } from './about/about.component';
 import { HerosectionComponent } from './herosection/herosection.component';
+import { CodeGlobComponent } from './animation/code-glob/code-glob.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { AllProjectsComponent } from './all-projects/all-projects.component';
+import { TechnologiesComponent } from './technology/technology.component';
+import { DevelopmentProcessComponent } from './development-process/development-process.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -16,7 +22,13 @@ import { HerosectionComponent } from './herosection/herosection.component';
     HomeComponent,
     AboutComponent,
     ServicesComponent,
-    HerosectionComponent
+    HerosectionComponent,
+    CodeGlobComponent,
+    ProjectsComponent,
+    AllProjectsComponent,
+    TechnologiesComponent,
+    DevelopmentProcessComponent,
+    ContactComponent
 
 
   ],
@@ -26,8 +38,11 @@ import { HerosectionComponent } from './herosection/herosection.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+
+
   ],
   exports: [
     HomeComponent ]
+    ,  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PagesModule { }

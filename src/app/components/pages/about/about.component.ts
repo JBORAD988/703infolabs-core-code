@@ -9,13 +9,11 @@ import { ScrollAnimationService } from 'src/app/services/animationservice.servic
       <p class="subtitle animate slide-down">Crafting Digital Excellence</p>
 
       <div class="content-wrapper">
-        <!-- Company Overview -->
         <div class="about-card main-card animate fade-in">
           <h2>Who We Are</h2>
           <p>We are a passionate team of developers, designers, and digital innovators dedicated to transforming ideas into powerful digital solutions. With expertise in cutting-edge technologies and a commitment to excellence, we help businesses thrive in the digital age.</p>
         </div>
 
-        <!-- Stats Section -->
         <div class="stats-grid">
           <div class="stat-card animate slide-up"
                *ngFor="let stat of stats; let i = index"
@@ -37,7 +35,7 @@ import { ScrollAnimationService } from 'src/app/services/animationservice.servic
         </div>
 
         <!-- Team Section -->
-        <div class="team-section animate fade-in">
+        <!-- <div class="team-section animate fade-in">
           <h2>Our Expertise</h2>
           <div class="expertise-grid">
             <div class="expertise-card animate slide-right"
@@ -47,7 +45,7 @@ import { ScrollAnimationService } from 'src/app/services/animationservice.servic
               <div class="skill-level" [attr.data-level]="skill.level"></div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
   `,
@@ -453,11 +451,9 @@ export class AboutComponent implements OnInit, AfterViewInit  {
     }
 
     private initializeAnimations() {
-      // Get all elements with animation classes
       const animatedElements = this.elementRef.nativeElement.querySelectorAll('.animate');
       this.scrollAnimationService.observeElements(animatedElements);
 
-      // Special handling for skill bars
       const skillBars = this.elementRef.nativeElement.querySelectorAll('.skill-level');
       this.scrollAnimationService.observeElements(skillBars);
     }

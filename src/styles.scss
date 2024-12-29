@@ -20,7 +20,6 @@ $accent-blue: rgba(0, 150, 255, 0.8);
 $gradient-start: #4FD1C5;
 $gradient-end: #63B3ED;
 
-// Mixins
 @mixin glass-effect {
   background: $glass-bg;
   backdrop-filter: blur(18px);
@@ -55,4 +54,3 @@ $gradient-end: #63B3ED;
     transform: scaleX(1);
   }
 }
-
