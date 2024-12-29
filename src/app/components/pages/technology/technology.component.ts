@@ -18,8 +18,9 @@ import { Component } from '@angular/core';
       <div class="tech-grid" [class.show]="showTechnologies">
         <div class="tech-card" *ngFor="let tech of getTechnologies()">
           <div class="tech-icon">
-            <img [src]="tech.icon" [alt]="tech.name">
-          </div>
+          <i *ngIf="!tech.url" class="fa-brands" [ngClass]="tech.icon"  [style.color]="tech.color || 'white'"></i>
+          <img *ngIf="tech.url" [src]="tech.icon" [alt]="tech.name">
+            </div>
           <h3>{{tech.name}}</h3>
         </div>
       </div>
@@ -99,7 +100,8 @@ import { Component } from '@angular/core';
 
     .tech-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 0.2fr));
       gap: 2rem;
       opacity: 0;
       transform: translateY(20px);
@@ -126,6 +128,9 @@ import { Component } from '@angular/core';
         .tech-icon img {
           transform: scale(1.1);
         }
+        .tech-icon img {
+          transform: scale(1.1);
+        }
       }
     }
 
@@ -137,8 +142,13 @@ import { Component } from '@angular/core';
       img {
         width: 100%;
         height: 100%;
+
         object-fit: contain;
         transition: transform 0.3s ease;
+      }
+
+      i{
+        font-size: 4.5rem;
       }
     }
 
@@ -167,45 +177,58 @@ export class TechnologiesComponent {
     'Front End',
     'Database',
     'Backend',
-    'CMS',
-    'Infra and DevOps'
+    // 'CMS',
+    // 'Infra and DevOps'
   ];
 
   selectedCategory: string = 'Front End';
   showTechnologies: boolean = true;
 
-  frontEndTech = [
-    { name: 'Angular JS', icon: 'assets/angular.svg' },
-    { name: 'React Js', icon: 'assets/react.svg' },
-    { name: 'TypeScript', icon: 'assets/typescript.svg' },
-    { name: 'Vue', icon: 'assets/vue.svg' },
-    { name: 'WPF', icon: 'assets/wpf.svg' },
-    { name: 'HTML5', icon: 'assets/html5.svg' }
-  ];
 
-  techMap: { [key: string]: { name: string; icon: string; }[] } = {
-    'Front End': this.frontEndTech,
+  techMap: { [key: string]: { name: string; icon: string; url: boolean; color: string }[] } = {
+    'Front End': [
+      { name: 'Angular', icon: 'fa-angular', url: false, color: '#DD0031' },
+      { name: 'React Js', icon: 'fa-react', url: false, color: '#61DAFB' },
+      { name: 'Vue', icon: 'fa-vuejs', url: false, color: '#42B883' },
+    { name: 'HTML5', icon: 'fa-html5', url: false, color: '#E34F26' },
+    { name: 'TypeScript', icon: 'https://img.icons8.com/?size=100&id=uJM6fQYqDaZK&format=png&color=000000', url: true ,color: ''  }
+    ],
     'Mobile': [
-      { name: 'React Native', icon: 'assets/react-native.svg' },
-      { name: 'Flutter', icon: 'assets/flutter.svg' },
-      { name: 'Ionic', icon: 'assets/ionic.svg' }
+      { name: 'React Native', icon: 'fa-react', url: false, color: '#61DAFB' },
+      { name: 'Flutter', icon: 'fa-flutter', url: false, color: '#74C0FC' },
+      { name: 'android', icon: 'fa-android', url: false, color: '#63E6BE' },
     ],
     'Backend': [
-      { name: 'Node.js', icon: 'assets/nodejs.svg' },
-      { name: 'Python', icon: 'assets/python.svg' },
-      { name: 'Java', icon: 'assets/java.svg' }
+      { name: 'Node.js', icon: 'assets/icons8-nodejs.svg', url: true, color: '' },
+      { name: 'Python', icon: 'assets/icons8-python.svg', url: true, color: '' },
+      { name: 'Java', icon: 'assets/icons8-java.svg', url: true, color: '' },
     ],
     'Database': [
-      { name: 'MongoDB', icon: 'assets/mongodb.svg' },
-      { name: 'MySQL', icon: 'assets/mysql.svg' },
-      { name: 'PostgreSQL', icon: 'assets/postgresql.svg' }
+      { name: 'MongoDB', icon: 'assets/icons8-mongodb.svg', url: true, color: '' },
+      { name: 'MySQL', icon: 'assets/icons8-mysql.svg', url: true, color: '' },
+      { name: 'PostgreSQL', icon: 'assets/icons8-postgresql.svg', url: true, color: '' },
     ],
     'AI Technologies': [
-      { name: 'TensorFlow', icon: 'assets/tensorflow.svg' },
-      { name: 'PyTorch', icon: 'assets/pytorch.svg' },
-      { name: 'Keras', icon: 'assets/keras.svg' }
+      { name: 'TensorFlow', icon: 'assets/icons8-tensorflow.svg', url: true, color: '' },
+      { name: 'OpenAI', icon: 'assets/icons8-chatgpt.svg', url: true, color: '#EE4C2C' },
+      { name: 'Codex', icon: 'fa-codepen', url: false, color: '#EE4C2C' },
+      { name: 'Vertex AI', icon: 'assets/Vertex_AI_Logo.png', url: true, color: '' },
+      { name: 'Cloud Vision', icon: 'assets/cloud-vision.png', url: true, color: '' },
+      { name: 'OpenCV', icon: 'assets/openCv.png', url: true, color: '' },
+      { name: 'IBM Watson', icon: 'assets/ibm.gif', url: true, color: '' },
+      { name: 'Cloud Natural Language', icon: 'assets/cnl.svg', url: true, color: '' },
+      { name: 'Cognitive Services', icon: 'assets/cognative-services.png', url: true, color: '' },
+      { name: 'Bot Framework', icon: 'assets/bot-framework-default.png', url: true, color: '' },
+      { name: 'Mistral', icon: 'assets/mistral-ai-icon.webp', url: true, color: '' },
+      { name: 'LLama', icon: 'assets/meta.png', url: true, color: '' },
+      { name: 'Gemini', icon: 'assets/Google_Gemini_logo.png', url: true, color: '' },
+      { name: 'Anthropic', icon: 'assets/Anthropic-Circle-Logo.webp', url: true, color: '' },
+      { name: 'N8N', icon: 'assets/n8n.png', url: true, color: '' },
+      { name: 'Keras', icon: 'assets/keras.png', url: true, color: '' },
     ],
   };
+
+
 
   selectCategory(category: string) {
     this.showTechnologies = false;
