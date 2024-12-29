@@ -183,7 +183,6 @@ export class TechnologiesComponent {
     { name: 'HTML5', icon: 'assets/html5.svg' }
   ];
 
-  // Add other technology categories
   techMap: { [key: string]: { name: string; icon: string; }[] } = {
     'Front End': this.frontEndTech,
     'Mobile': [
@@ -196,7 +195,16 @@ export class TechnologiesComponent {
       { name: 'Python', icon: 'assets/python.svg' },
       { name: 'Java', icon: 'assets/java.svg' }
     ],
-    // Add other categories...
+    'Database': [
+      { name: 'MongoDB', icon: 'assets/mongodb.svg' },
+      { name: 'MySQL', icon: 'assets/mysql.svg' },
+      { name: 'PostgreSQL', icon: 'assets/postgresql.svg' }
+    ],
+    'AI Technologies': [
+      { name: 'TensorFlow', icon: 'assets/tensorflow.svg' },
+      { name: 'PyTorch', icon: 'assets/pytorch.svg' },
+      { name: 'Keras', icon: 'assets/keras.svg' }
+    ],
   };
 
   selectCategory(category: string) {

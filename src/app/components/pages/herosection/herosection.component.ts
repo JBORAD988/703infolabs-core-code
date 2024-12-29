@@ -7,18 +7,19 @@ import { Component, OnInit } from '@angular/core';
     <section class="hero-container">
       <div class="content-wrapper">
         <div class="text-content">
-          <h1 class="title">
-            Turning Vision Into
-            <span class="highlight">Digital Reality</span>
-          </h1>
+        <h1 class="title">
+  Turning Vision Into
+  <span class="highlight">Digital Reality</span>
+</h1>
 
-          <p class="subtitle">
-            We craft innovative digital solutions that help businesses thrive in the modern technological landscape. Our expertise brings your ideas to life.
-          </p>
+<p class="subtitle">
+  We are a full-service digital solutions provider, specializing in web app development, backend systems, UI/UX design, and AI-driven innovations.
+  Our expertise in AI integration ensures your ideas become powerful and future-ready solutions.
+</p>
 
           <div class="cta-buttons">
-            <button class="primary-btn glow-effect">Start Project</button>
-            <button class="secondary-btn glow-effect">Our Work</button>
+            <button class="primary-btn glow-effect">Explore Our Projects</button>
+            <button class="secondary-btn glow-effect">Get in Touch</button>
           </div>
 
           <div class="tech-stack">
@@ -52,7 +53,7 @@ import { Component, OnInit } from '@angular/core';
       position: relative;
       display: flex;
       align-items: center;
-      padding: 1% 15% 6rem 15%;
+      padding: 1% 5% 6rem 5%;
       overflow: hidden;
 
 
@@ -338,12 +339,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HerosectionComponent implements OnInit {
   technologies = [
+    'AI/ML',
     'Angular',
     'React',
     'Node.js',
     'TypeScript',
     'Python',
-    'Cloud Native'
+    'Cloud Native',
+    'Flutter',
+    'Django'
+
   ];
 
   stats = [
@@ -353,6 +358,5 @@ export class HerosectionComponent implements OnInit {
   ];
 
   ngOnInit() {
-    // Initialize any required functionality
   }
 }
