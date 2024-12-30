@@ -77,7 +77,6 @@ import { Component, OnInit } from '@angular/core';
       min-height: 500px;
       overflow: hidden;
       padding: 4rem 0 0;
-    //  margin-bottom:;
     }
 
     .code-animation {
@@ -131,7 +130,7 @@ import { Component, OnInit } from '@angular/core';
       @include glass-effect;
       margin: 0 0%;
       border-radius: 2rem 2rem 0 0;
-      padding: 4rem 3rem 6rem;
+      padding: 4rem 3rem 7rem;
     }
 
     .footer-top {

@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import { SharedModule } from "./components/shared/shared.module";
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-
+  template: `
+  <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+    `,
+  styles: [``],
 })
 export class AppComponent {
-  title = '703infolabs';
-
-
-
-
+  title = 'codebouncers';
 }
