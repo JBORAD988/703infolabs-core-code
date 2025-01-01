@@ -128,7 +128,7 @@ import { Component } from '@angular/core';
         .tech-icon img {
           transform: scale(1.1);
         }
-        .tech-icon img {
+        .tech-icon i {
           transform: scale(1.1);
         }
       }
@@ -149,6 +149,7 @@ import { Component } from '@angular/core';
 
       i{
         font-size: 4.5rem;
+        transition: transform 0.3s ease;
       }
     }
 

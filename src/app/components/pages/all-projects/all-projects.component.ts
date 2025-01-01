@@ -413,6 +413,33 @@ export class AllProjectsComponent {
       demoLink: 'https://demo.example.com',
       isHovered: false
     },
+    {
+      id: 2,
+      title: 'E-Commerce Platform',
+      category: 'Data Analytics',
+      description: 'A comprehensive e-commerce solution with real-time inventory tracking and advanced analytics.',
+      imageUrl: 'assets/images/project1.jpg',
+      technologies: ['Angular', 'Node.js', 'MongoDB', 'Redis'],
+      duration: '6 months',
+      client: {
+        name: 'TechRetail Inc.',
+        industry: 'Retail',
+        location: 'New York, USA'
+      },
+      stats: {
+        completion: '100%',
+        satisfaction: '98%',
+        team: '6 members'
+      },
+      highlights: [
+        'Real-time inventory management',
+        'Advanced analytics dashboard',
+        'Multi-vendor support',
+        'Integrated payment solutions'
+      ],
+      demoLink: 'https://demo.example.com',
+      isHovered: false
+    },
     // Add more projects...
   ];
 

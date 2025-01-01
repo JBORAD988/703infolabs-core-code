@@ -10,7 +10,8 @@ import { ScrollAnimationService } from 'src/app/services/animationservice.servic
 
       <div class="services-grid">
         <div class="service-card" *ngFor="let service of services">
-          <div class="service-icon">{{service.icon}}</div>
+          <i class="service-icon" [ngClass]="service.icon"  [style.color]="service.color || 'white'"></i>
+
           <h3 class="service-title">{{service.title}}</h3>
           <p class="service-description">{{service.description}}</p>
           <div class="service-features">
@@ -156,7 +157,7 @@ import { ScrollAnimationService } from 'src/app/services/animationservice.servic
     }
 
     .service-icon {
-      transform: scale(1.1);
+      // transform: scale(1.1);
       text-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
     }
 
@@ -203,6 +204,10 @@ import { ScrollAnimationService } from 'src/app/services/animationservice.servic
       rgba(0, 150, 255, 0.1) 0%,
       transparent 70%
     );
+  }
+
+  .service-icon{
+    transition: all 0.3s ease;
   }
 }
 
@@ -374,7 +379,8 @@ this.initializeAnimations();
 
   services = [
     {
-      icon: '💻',
+      icon: 'fa-solid fa-laptop',
+      color:'',
       title: 'Web Development',
       description: 'Custom web applications tailored to your business needs.',
       features: [
@@ -386,7 +392,8 @@ this.initializeAnimations();
       technologies: ['Angular', 'React', 'Node.js', 'TypeScript']
     },
     {
-      icon: '📱',
+      icon: 'fa-solid fa-mobile',
+      color:'',
       title: 'Mobile Development',
       description: 'Native and cross-platform mobile solutions.',
       features: [
@@ -398,7 +405,8 @@ this.initializeAnimations();
       technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin']
     },
     {
-      icon: '⚡',
+      icon: 'fa-solid fa-server',
+      color:'',
       title: 'Backend Development',
       description: 'Scalable and secure backend solutions.',
       features: [
@@ -410,7 +418,8 @@ this.initializeAnimations();
       technologies: ['Node.js', 'Python', 'MongoDB', 'PostgreSQL']
     },
     {
-      icon: '🛠️',
+      icon: 'fa-solid fa-toolbox',
+      color:'',
       title: 'DevOps Services',
       description: 'Streamline your development and deployment process.',
       features: [
@@ -422,7 +431,7 @@ this.initializeAnimations();
       technologies: ['Docker', 'Kubernetes', 'AWS', 'Jenkins']
     },
     {
-      icon: '🔒',
+      icon: 'fa-solid fa-lock',
       title: 'Security Solutions',
       description: 'Protect your applications and data.',
       features: [
@@ -434,7 +443,7 @@ this.initializeAnimations();
       technologies: ['OAuth', 'JWT', 'SSL/TLS', 'Firebase Auth']
     },
     {
-      icon: '📊',
+      icon: 'fa-solid fa-chart-simple',      color:'',
       title: 'Data Analytics',
       description: 'Turn your data into actionable insights.',
       features: [

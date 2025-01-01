@@ -34,9 +34,9 @@ import {  Router } from '@angular/router';
       display: flex;
       justify-content: space-between;
       align-items: center;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(6px);
       color: rgb(226, 226, 226);
-     background: rgba(255, 255, 255, 0.06) !important;
+     background: rgba(255, 255, 255, 0.01) !important;
     }
 
     .company_name {

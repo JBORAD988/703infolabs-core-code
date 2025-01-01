@@ -28,7 +28,9 @@ import { ScrollAnimationService } from 'src/app/services/animationservice.servic
           <div class="value-card animate slide-in"
                *ngFor="let value of coreValues; let i = index"
                [style.animation-delay]="i * 0.15 + 's'">
-            <div class="value-icon">{{value.icon}}</div>
+
+            <i  class="value-icon" [ngClass]="value.icon"  [style.color]="value.color || 'white'"></i>
+
             <h3>{{value.title}}</h3>
             <p>{{value.description}}</p>
           </div>
@@ -136,6 +138,8 @@ import { ScrollAnimationService } from 'src/app/services/animationservice.servic
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
 
+
+
       .value-card {
         @include glass-effect;
         padding: 2rem;
@@ -145,6 +149,10 @@ import { ScrollAnimationService } from 'src/app/services/animationservice.servic
 
         &:hover {
           transform: translateY(-5px);
+        }
+
+        i{
+          font-size: 20px;
         }
 
         .value-icon {
@@ -467,25 +475,30 @@ export class AboutComponent implements OnInit, AfterViewInit  {
 
   coreValues = [
     {
-      icon: '🎯',
+      icon: 'fa-solid fa-bullseye',
+      color:'',
       title: 'Innovation',
       description: 'Constantly pushing boundaries and embracing new technologies to deliver cutting-edge solutions.'
     },
     {
-      icon: '🤝',
+      icon: 'fa-solid fa-handshake',
+      color:'',
       title: 'Collaboration',
       description: 'Working closely with clients to understand their needs and deliver tailored solutions.'
     },
     {
-      icon: '⚡',
+      icon: 'fa-solid fa-bolt',
+      color:'',
       title: 'Excellence',
       description: 'Committed to delivering high-quality code and exceptional user experiences.'
     },
     {
-      icon: '🔄',
+      icon: 'fa-solid fa-rotate-right',
+      color:'',
       title: 'Agility',
       description: 'Adapting quickly to changes and maintaining flexibility in our approach.'
     }
+
   ];
 
   expertise = [
