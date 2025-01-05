@@ -206,8 +206,10 @@ export class TechnologiesComponent {
     ],
     'Database': [
       { name: 'MongoDB', icon: 'assets/icons8-mongodb.svg', url: true, color: '' },
+      {name:'Firebase', icon:'assets/google_firebase.webp', url: true, color: ''},
       { name: 'MySQL', icon: 'assets/icons8-mysql.svg', url: true, color: '' },
-      { name: 'PostgreSQL', icon: 'assets/icons8-postgresql.svg', url: true, color: '' },
+      { name: 'PostgreSQL', icon: 'assets/icons8-postgresql.svg', url: true, color: '' }
+
     ],
     'AI Technologies': [
       { name: 'TensorFlow', icon: 'assets/icons8-tensorflow.svg', url: true, color: '' },
