@@ -418,7 +418,7 @@ export class AllProjectsComponent {
       title: 'E-Commerce Platform',
       category: 'Data Analytics',
       description: 'A comprehensive e-commerce solution with real-time inventory tracking and advanced analytics.',
-      imageUrl: 'assets/images/project1.jpg',
+      imageUrl: 'assets/Projects/ecommerce.png',
       technologies: ['Angular', 'Node.js', 'MongoDB', 'Redis'],
       duration: '6 months',
       client: {
@@ -437,10 +437,10 @@ export class AllProjectsComponent {
         'Multi-vendor support',
         'Integrated payment solutions'
       ],
-      demoLink: 'https://demo.example.com',
+      demoLink: 'assets/Projects/ecommerce.png',
       isHovered: false
     },
-    // Add more projects...
+
   ];
 
   filteredProjects: DetailedProject[] = this.allProjects;

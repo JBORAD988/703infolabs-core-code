@@ -203,6 +203,7 @@ export class TechnologiesComponent {
       { name: 'Node.js', icon: 'assets/icons8-nodejs.svg', url: true, color: '' },
       { name: 'Python', icon: 'assets/icons8-python.svg', url: true, color: '' },
       { name: 'Java', icon: 'assets/icons8-java.svg', url: true, color: '' },
+      {name:'Rust', icon:'assets/rust.svg', url: true, color: ''},
     ],
     'Database': [
       { name: 'MongoDB', icon: 'assets/icons8-mongodb.svg', url: true, color: '' },
