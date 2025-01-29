@@ -23,8 +23,8 @@ import { Component, OnInit } from '@angular/core';
 </p>
 
           <div class="cta-buttons">
-            <button class="primary-btn glow-effect">Explore Our Projects</button>
-            <button class="secondary-btn glow-effect">Get in Touch</button>
+            <button class="primary-btn glow-effect" routerLink="/all-projects">Explore Our Projects</button>
+            <button class="secondary-btn glow-effect" routerLink="/contact">Get in Touch</button>
           </div>
 
           <div class="tech-stack">
