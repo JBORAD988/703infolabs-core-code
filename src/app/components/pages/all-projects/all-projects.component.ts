@@ -108,12 +108,6 @@ interface DetailedProject {
      </div>
    </div>
  </div>
-
- <button class="scroll-top"
-         [class.visible]="showScrollTop"
-         (click)="scrollToTop()">
-   <i class="fas fa-arrow-up"></i>
- </button>
 </section>
   `,
   styles: [`
@@ -418,33 +412,6 @@ interface DetailedProject {
   }
 }
 
-.scroll-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  @include glass-effect;
-  color: $text-light;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-
-  &.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 150, 255, 0.3);
-  }
-}
 
 @media (max-width: 768px) {
   .all-projects-container {
@@ -481,7 +448,7 @@ export class AllProjectsComponent {
   ];
 
   activeCategory: string = 'All';
-  showScrollTop: boolean = false;
+
 
   allProjects: DetailedProject[] = [
     {
@@ -657,11 +624,6 @@ export class AllProjectsComponent {
 
   filteredProjects: DetailedProject[] = this.allProjects;
 
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    this.showScrollTop = window.pageYOffset > 300;
-  }
-
   filterProjects(category: string) {
     this.activeCategory = category;
     this.filteredProjects = category === 'All'
@@ -683,8 +645,6 @@ export class AllProjectsComponent {
     project.isSliding = false;
   }
 
-  scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+
  }
 
