@@ -49,9 +49,9 @@ import { Component, OnInit } from '@angular/core';
               <button class="submit-btn">Subscribe</button>
             </div>
             <div class="contact-details">
-              <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+              <!-- <p><i class="fas fa-phone"></i> +1 234 567 890</p> -->
               <p><i class="fas fa-envelope"></i> info&#64;codebouncers.com</p>
-              <p><i class="fas fa-map-marker-alt"></i> Tech Hub, Digital Avenue</p>
+              <p><i class="fas fa-map-marker-alt"></i> Iskon, Ahmedabad</p>
             </div>
           </div>
         </div>
