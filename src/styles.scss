@@ -54,3 +54,29 @@ $gradient-end: #63B3ED;
     transform: scaleX(1);
   }
 }
+
+
+
+//scroller
+html::-webkit-scrollbar {
+  width: 2px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, $gradient-start 0%, $glass-bg 100%);
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, $gradient-start 0%, $glass-bg 100%);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $gradient-start  #e0e0e000;
+}
