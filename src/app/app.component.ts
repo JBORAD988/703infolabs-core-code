@@ -46,7 +46,7 @@ import { Component, HostListener } from '@angular/core';
 `],
 })
 export class AppComponent {
-  title = 'codebouncers';
+  title = '703infolabs';
 
   showScrollTop: boolean = false;
 

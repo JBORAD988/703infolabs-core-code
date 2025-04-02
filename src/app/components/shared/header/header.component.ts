@@ -5,7 +5,7 @@ import {  Router } from '@angular/router';
   selector: 'app-header',
   template: `
     <nav class="nav_main">
-      <div class="company_name">codebouncers</div>
+      <div class="company_name">703infolabs</div>
 
       <div class="nav_items">
         <div

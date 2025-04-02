@@ -14,7 +14,7 @@ import { Component, OnInit } from '@angular/core';
       <div class="footer-content">
         <div class="footer-top">
           <div class="company-info">
-            <h2 class="company-name">CodeBouncers</h2>
+            <h2 class="company-name">703infolabs</h2>
             <p class="company-desc">Transforming ideas into digital reality</p>
             <div class="social-links">
               <a href="#" class="social-link" *ngFor="let social of socials">
@@ -50,7 +50,7 @@ import { Component, OnInit } from '@angular/core';
             </div>
             <div class="contact-details">
               <!-- <p><i class="fas fa-phone"></i> +1 234 567 890</p> -->
-              <p><i class="fas fa-envelope"></i> info&#64;codebouncers.com</p>
+              <p><i class="fas fa-envelope"></i> info&#64;703infolabs.com</p>
               <p><i class="fas fa-map-marker-alt"></i> Iskon, Ahmedabad</p>
             </div>
           </div>
@@ -58,7 +58,7 @@ import { Component, OnInit } from '@angular/core';
 
         <div class="footer-bottom">
           <div class="copyright">
-            © {{currentYear}} CodeBouncers. All rights reserved.
+            © {{currentYear}} 703infolabs. All rights reserved.
           </div>
           <!-- <div class="tech-stack">
             <span *ngFor="let tech of technologies" class="tech-pill">

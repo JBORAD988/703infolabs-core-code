@@ -21,7 +21,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
               <i class="fas fa-envelope"></i>
               <div>
                 <h3>Email Us</h3>
-                <p>info&#64;codebouncers.com</p>
+                <p>info&#64;703infolabs.com</p>
               </div>
             </div>
 
