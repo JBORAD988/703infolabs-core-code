@@ -76,6 +76,7 @@ import { Component, OnInit } from '@angular/core';
       @include gradient-text;
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      padding: 20px;
     }
 
     .subtitle {
