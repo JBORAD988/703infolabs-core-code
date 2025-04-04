@@ -68,15 +68,15 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, $gradient-start 0%, $glass-bg 100%);
+  background: linear-gradient(180deg, $accent-blue 0%, $glass-bg 100%);
   border-radius: 10px;
 }
 
 html::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, $gradient-start 0%, $glass-bg 100%);
+  background: linear-gradient(180deg, $accent-blue 0%, $glass-bg 100%);
 }
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: $gradient-start  #e0e0e000;
+  scrollbar-color: $accent-blue  #e0e0e000;
 }
